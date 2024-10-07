@@ -1,0 +1,2 @@
+module ApportLocalsHelper
+end

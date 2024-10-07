@@ -1,0 +1,2 @@
+class MembreConseil < ApplicationRecord
+end

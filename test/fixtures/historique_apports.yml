@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  montant_recu: 9.99
+  membre_conseil: one
+  date_jour: 2024-10-07
+
+two:
+  montant_recu: 9.99
+  membre_conseil: two
+  date_jour: 2024-10-07

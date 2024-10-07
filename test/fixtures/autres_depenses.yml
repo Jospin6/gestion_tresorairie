@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  apport_local: one
+  titre: MyString
+  montant: 9.99
+  description: MyText
+  date_jour: 2024-10-07
+
+two:
+  apport_local: two
+  titre: MyString
+  montant: 9.99
+  description: MyText
+  date_jour: 2024-10-07

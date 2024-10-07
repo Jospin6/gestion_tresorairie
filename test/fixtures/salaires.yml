@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employe: one
+  mois: 1
+  annee: 1
+  montant: 9.99
+  date_jour: 2024-10-07
+  apport_local: one
+
+two:
+  employe: two
+  mois: 1
+  annee: 1
+  montant: 9.99
+  date_jour: 2024-10-07
+  apport_local: two

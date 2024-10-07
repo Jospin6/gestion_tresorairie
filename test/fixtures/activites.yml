@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titre: MyString
+  description: MyText
+  date_debut: 2024-10-07
+  date_fin: 2024-10-07
+  projet: one
+
+two:
+  titre: MyString
+  description: MyText
+  date_debut: 2024-10-07
+  date_fin: 2024-10-07
+  projet: two

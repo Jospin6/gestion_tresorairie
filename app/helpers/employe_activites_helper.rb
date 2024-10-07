@@ -1,0 +1,2 @@
+module EmployeActivitesHelper
+end

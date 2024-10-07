@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  partenaire: one
+  projet: one
+  montant: 9.99
+  num_bordereau: MyString
+  banque: MyString
+
+two:
+  partenaire: two
+  projet: two
+  montant: 9.99
+  num_bordereau: MyString
+  banque: MyString
