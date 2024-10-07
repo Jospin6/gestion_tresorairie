@@ -14,11 +14,13 @@
   <body>
     <main>
       <div class="flex justify-between px-4 h-[50px] w-full items-center">
-        <span class="text-2xl">Nom Ese</span>
+        <%= link_to 'Nom Ese', root_path, class: 'text-2xl font-[500]' %>
         <div>
           
           <% if !user_signed_in? %>
             <%= link_to 'connexion', new_user_session_path, class: 'px-[10px] py-[3px] rounded-lg bg-blue-600 text-white' %>
+          <% else %>
+            <span class="text-gray-400 text-[12px] px-[10px] py-[3px] border-[1px] border-gray-400 rounded-lg"><%= current_user.username %></span>
           <% end %>
           
         </div>
