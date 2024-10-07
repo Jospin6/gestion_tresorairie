@@ -13,6 +13,16 @@
 
   <body>
     <main>
+      <div class="flex justify-between px-4 h-[50px] w-full items-center">
+        <span class="text-2xl">Nom Ese</span>
+        <div>
+          
+          <% if !user_signed_in? %>
+            <%= link_to 'connexion', new_user_session_path, class: 'px-[10px] py-[3px] rounded-lg bg-blue-600 text-white' %>
+          <% end %>
+          
+        </div>
+      </div>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
