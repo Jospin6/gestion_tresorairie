@@ -8,15 +8,27 @@
 
   <div class="flex justify-between items-center">
     <h1 class=""></h1>
-    <%= link_to "Nouveau employe", new_employe_path, class: "py-3 px-5 text-blue-500 block font-medium" %>
+    <%= link_to "Nouveau employe", new_employe_path, class: "py-3 text-blue-500 block font-medium" %>
   </div>
 
-  <div id="employes" class="min-w-full">
-    <% @employes.each do |employe| %>
-      <%= render employe %>
-      <p>
-        <%= link_to "Show this employe", employe, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      </p>
-    <% end %>
+  <div id="employes" class="min-w-full bg-white p-2 rounded-lg">
+    <table class="w-full">
+    <thead>
+      <tr class="border-b-[1px] border-gray-400">
+        <th>Nom</th>
+        <th>Post nom</th>
+        <th>Contact</th>
+        <th>Mail</th>
+        <th>Adresses</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @employes.each do |employe| %>
+        <%= render employe %>
+      <% end %>
+    </tbody>
+  </table>
+    
   </div>
 </div>

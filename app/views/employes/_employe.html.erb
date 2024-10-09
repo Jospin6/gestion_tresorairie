@@ -1,27 +1,11 @@
-<div id="<%= dom_id employe %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Nom:</strong>
-    <%= employe.nom %>
-  </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Post nom:</strong>
-    <%= employe.post_nom %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Contact:</strong>
-    <%= employe.contact %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Mail:</strong>
-    <%= employe.mail %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Adresses:</strong>
-    <%= employe.adresses %>
-  </p>
-
-</div>
+<tr id="<%= dom_id employe %>" class="border-b-[1px] border-gray-400 text-center text-[14px]">
+  <td><%= employe.nom %></td>
+  <td><%= employe.post_nom %></td>
+  <td><%= employe.contact %></td>
+  <td><%= employe.mail %></td>
+  <td><%= employe.adresses %></td>
+  <td>
+    <%= link_to "Voir", employe, class: "rounded-lg py-[2px] px-2 text-white text-[12px] bg-blue-500 font-medium" %>
+  </td>
+</tr>
