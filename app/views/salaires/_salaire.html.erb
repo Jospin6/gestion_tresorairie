@@ -1,32 +1,8 @@
-<div id="<%= dom_id salaire %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Employe:</strong>
-    <%= salaire.employe_id %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Mois:</strong>
-    <%= salaire.mois %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Annee:</strong>
-    <%= salaire.annee %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Montant:</strong>
-    <%= salaire.montant %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Date jour:</strong>
-    <%= salaire.date_jour %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Apport local:</strong>
-    <%= salaire.apport_local_id %>
-  </p>
-
-</div>
+<tr id="<%= dom_id membre_conseil %>" class="border-b-[1px] border-gray-400 text-center text-[14px]">
+  <td><%= salaire.employe_id %></td>
+  <td><%= salaire.mois %> - <%= salaire.annee %></td>
+  <td><%= salaire.montant %></td>
+  <td>
+    <%= link_to "Imprimer", salaire, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </td>
+</tr>

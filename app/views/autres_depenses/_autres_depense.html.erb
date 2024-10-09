@@ -1,27 +1,9 @@
-<div id="<%= dom_id autres_depense %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Apport local:</strong>
-    <%= autres_depense.apport_local_id %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Titre:</strong>
-    <%= autres_depense.titre %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Montant:</strong>
-    <%= autres_depense.montant %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
-    <%= autres_depense.description %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Date jour:</strong>
-    <%= autres_depense.date_jour %>
-  </p>
-
-</div>
+<tr id="<%= dom_id autres_depense %>" class="border-b-[1px] border-gray-400 text-center text-[14px]">
+  <td><%= autres_depense.titre %></td>
+  <td><%= autres_depense.montant %></td>
+  <td><%= autres_depense.description %></td>
+  <td><%= autres_depense.date_jour %></td>
+  <td>
+    <%= link_to "Imprimer", autres_depense, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </td>
+</tr>

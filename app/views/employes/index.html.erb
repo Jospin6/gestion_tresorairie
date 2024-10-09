@@ -13,22 +13,22 @@
 
   <div id="employes" class="min-w-full bg-white p-2 rounded-lg">
     <table class="w-full">
-    <thead>
-      <tr class="border-b-[1px] border-gray-400">
-        <th>Nom</th>
-        <th>Post nom</th>
-        <th>Contact</th>
-        <th>Mail</th>
-        <th>Adresses</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @employes.each do |employe| %>
-        <%= render employe %>
-      <% end %>
-    </tbody>
-  </table>
+      <thead>
+        <tr class="border-b-[1px] border-gray-400">
+          <th>Nom</th>
+          <th>Post nom</th>
+          <th>Contact</th>
+          <th>Mail</th>
+          <th>Adresses</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @employes.each do |employe| %>
+          <%= render employe %>
+        <% end %>
+      </tbody>
+    </table>
     
   </div>
 </div>

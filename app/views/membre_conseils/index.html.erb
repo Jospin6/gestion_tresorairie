@@ -7,16 +7,30 @@
   <% content_for :sub_title, t("Membre conseils") %>
 
   <div class="flex justify-between items-center">
-    <h1 class="font-[500] text-2xl">Membre conseils</h1>
-    <%= link_to "New membre conseil", new_membre_conseil_path, class: "py-3 px-5 text-blue-500 block font-medium" %>
+    <h1 class="font-[500] text-2xl"></h1>
+    <%= link_to "Nouveau membre du conseil", new_membre_conseil_path, class: "py-3 px-5 text-blue-500 block font-medium" %>
   </div>
 
-  <div id="membre_conseils" class="min-w-full">
-    <% @membre_conseils.each do |membre_conseil| %>
-      <%= render membre_conseil %>
-      <p>
-        <%= link_to "Show this membre conseil", membre_conseil, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      </p>
-    <% end %>
+  <div id="membre_conseils" class="min-w-full bg-white p-2 rounded-lg">
+
+    <table class="w-full">
+      <thead>
+        <tr class="border-b-[1px] border-gray-400">
+          <th>Nom</th>
+          <th>Post nom</th>
+          <th>Contact</th>
+          <th>Mail</th>
+          <th>Adresses</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @membre_conseils.each do |membre_conseil| %>
+          <%= render membre_conseil %>
+        <% end %>
+      </tbody>
+    </table>
+
+    
   </div>
 </div>

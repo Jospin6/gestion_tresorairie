@@ -1,22 +1,17 @@
-<div id="<%= dom_id projet %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Titre:</strong>
-    <%= projet.titre %>
-  </p>
+<tr id="<%= dom_id projet %>" class="border-b-[1px] border-gray-400 text-center text-[14px]">
+  <td><%= projet.titre %></td>
+  <td><%= projet.description %></td>
+  <td><%= projet.date_debut %></td>
+  <td><%= projet.date_fin %></td>
+  <td></td>
+  <td><%= employe.adresse %></td>
+  <td>
+    <%= link_to "Voir", projet, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </td>
+</tr>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
-    <%= projet.description %>
-  </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Date debut:</strong>
-    <%= projet.date_debut %>
-  </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Date fin:</strong>
-    <%= projet.date_fin %>
-  </p>
 
-</div>
+
+

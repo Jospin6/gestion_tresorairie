@@ -1,27 +1,10 @@
-<div id="<%= dom_id membre_conseil %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Nom:</strong>
-    <%= membre_conseil.nom %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Post nom:</strong>
-    <%= membre_conseil.post_nom %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Contact:</strong>
-    <%= membre_conseil.contact %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Mail:</strong>
-    <%= membre_conseil.mail %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Adresses:</strong>
-    <%= membre_conseil.adresses %>
-  </p>
-
-</div>
+<tr id="<%= dom_id membre_conseil %>" class="border-b-[1px] border-gray-400 text-center text-[14px]">
+  <td><%= membre_conseil.nom %></td>
+  <td><%= membre_conseil.post_nom %></td>
+  <td><%= membre_conseil.contact %></td>
+  <td><%= membre_conseil.mail %></td>
+  <td><%= membre_conseil.adresses %></td>
+  <td>
+    <%= link_to "Voir", membre_conseil, class: "rounded-lg py-[2px] px-2 text-white text-[12px] bg-blue-500 font-medium" %>
+  </td>
+</tr>

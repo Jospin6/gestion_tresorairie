@@ -1,17 +1,8 @@
-<div id="<%= dom_id historique_apport %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Montant recu:</strong>
-    <%= historique_apport.montant_recu %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Membre conseil:</strong>
-    <%= historique_apport.membre_conseil_id %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Date jour:</strong>
-    <%= historique_apport.date_jour %>
-  </p>
-
-</div>
+<tr id="<%= dom_id historique_apport %>" class="border-b-[1px] border-gray-400 text-center text-[14px]">
+  <td><%= historique_apport.membre_conseil_id %></td>
+  <td><%= historique_apport.montant_recu %></td>
+  <td><%= historique_apport.date_jour %></td>
+  <td>
+    <%= link_to "Imprimer", historique_apport, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </td>
+</tr>

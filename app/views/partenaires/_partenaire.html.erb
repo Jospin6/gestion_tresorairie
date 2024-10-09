@@ -1,27 +1,10 @@
-<div id="<%= dom_id partenaire %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Nom:</strong>
-    <%= partenaire.nom %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Contact:</strong>
-    <%= partenaire.contact %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Mail:</strong>
-    <%= partenaire.mail %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Adresse:</strong>
-    <%= partenaire.adresse %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Type partenaire:</strong>
-    <%= partenaire.type_partenaire %>
-  </p>
-
-</div>
+<tr id="<%= dom_id partenaire %>" class="border-b-[1px] border-gray-400 text-center text-[14px]">
+  <td><%= employe.nom %></td>
+  <td><%= partenaire.type_partenaire %></td>
+  <td><%= employe.contact %></td>
+  <td><%= employe.mail %></td>
+  <td><%= employe.adresse %></td>
+  <td>
+    <%= link_to "Voir", partenaire, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </td>
+</tr>

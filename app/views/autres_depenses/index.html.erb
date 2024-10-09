@@ -7,16 +7,30 @@
   <% content_for :sub_title, t("Autres depenses") %>
 
   <div class="flex justify-between items-center">
-    <h1 class="font-[500] text-2xl">Autres depenses</h1>
-    <%= link_to "New autres depense", new_autres_depense_path, class: "py-3 px-5 text-blue-500 block font-medium" %>
+    <h1 class="font-[500] text-2xl"></h1>
+    <%= link_to "Nouveau depense", new_autres_depense_path, class: "py-3 px-5 text-blue-500 block font-medium" %>
   </div>
 
-  <div id="autres_depenses" class="min-w-full">
-    <% @autres_depenses.each do |autres_depense| %>
-      <%= render autres_depense %>
-      <p>
-        <%= link_to "Show this autres depense", autres_depense, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      </p>
-    <% end %>
+  <div id="autres_depenses" class="min-w-full bg-white p-2 rounded-lg">
+
+    <table class="w-full">
+      <thead>
+        <tr class="border-b-[1px] border-gray-400">
+          <th>Titre</th>
+          <th>Montant</th>
+          <th>Description</th>
+          <th>Date jour</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @autres_depenses.each do |autres_depense| %>
+          <%= render autres_depense %>
+        <% end %>
+      </tbody>
+    </table>
+
+
+    
   </div>
 </div>
