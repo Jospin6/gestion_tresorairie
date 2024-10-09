@@ -1,7 +1,11 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">New autres depense</h1>
+<div class="mx-auto md:w-2/3 w-full bg-white rounded-lg shadow">
+  <h1 class="text-md h-[40px] flex items-center rounded-t-lg bg-blue-500 text-white px-2">
+    Nouveau depense
+  </h1>
   <% content_for :sub_title, t("Autres depenses") %>
-  <%= render "form", autres_depense: @autres_depense %>
+  <div class="p-2">
+    <%= render "form", autres_depense: @autres_depense %>
 
-  <%= link_to "Back to autres depenses", autres_depenses_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Back to autres depenses", autres_depenses_path, class: "ml-2 rounded-lg py-[3px] px-[10px] bg-gray-100 inline-block" %>
+  </div>
 </div>

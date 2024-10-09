@@ -1,8 +1,12 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">Editing projet</h1>
+<div class="mx-auto md:w-2/3 w-full bg-white rounded-lg">
+  <h1 class="text-md h-[40px] flex items-center rounded-t-lg bg-blue-500 text-white px-2">
+    Modifier projet
+  </h1>
   <% content_for :sub_title, t("Projets") %>
-  <%= render "form", projet: @projet %>
+  <div class="p-2">
+    <%= render "form", projet: @projet %>
 
-  <%= link_to "Show this projet", @projet, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-  <%= link_to "Back to projets", projets_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Show this projet", @projet, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Back to projets", projets_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
 </div>

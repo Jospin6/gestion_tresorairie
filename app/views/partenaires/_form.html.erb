@@ -11,32 +11,33 @@
     </div>
   <% end %>
 
-  <div class="my-5">
-    <%= form.label :nom %>
-    <%= form.text_field :nom, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+  <div class="grid grid-cols-6 gap-4">
+    <div class="col-span-6 mt-2">
+      <%= form.label :nom %>
+      <%= form.text_field :nom, class: "block h-[35px] shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
 
-  <div class="my-5">
-    <%= form.label :contact %>
-    <%= form.text_field :contact, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+    <div class="col-span-3">
+      <%= form.label :contact %>
+      <%= form.text_field :contact, class: "block h-[35px] shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
 
-  <div class="my-5">
-    <%= form.label :mail %>
-    <%= form.text_field :mail, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+    <div class="col-span-3">
+      <%= form.label :mail %>
+      <%= form.text_field :mail, class: "block h-[35px] shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
 
-  <div class="my-5">
-    <%= form.label :adresse %>
-    <%= form.text_area :adresse, rows: 4, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+    <div class="col-span-6">
+      <%= form.label :type_partenaire %>
+      <%= form.text_field :type_partenaire, class: "block h-[35px] shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
 
-  <div class="my-5">
-    <%= form.label :type_partenaire %>
-    <%= form.text_field :type_partenaire, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    <div class="col-span-6">
+      <%= form.label :adresse %>
+      <%= form.text_area :adresse, rows: 2, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
   </div>
-
   <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.submit class: "rounded-lg py-[3px] px-[10px] mt-2 bg-blue-600 text-white inline-block cursor-pointer" %>
   </div>
 <% end %>
