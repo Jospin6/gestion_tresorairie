@@ -12,71 +12,78 @@
   </head>
 
   <body class="bg-[#F0F2F5]">
-    <div class="flex">
-        
-        <% if user_signed_in? %>
-          <div class="w-[20%] fixed top-0 left-0 h-screen bg-gray-900">
-            <%= link_to 'Nom Ese', root_path, class: 'flex items-center px-4 h-[50px] text-xl text-center text-blue-400 font-[500]' %>
-            <div>
-              <div class="px-2 mt-6">
-                <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
-                  <%= link_to 'Employes', employes_path, class: 'rounded-lg block text-white font-[200] text-[15px]' %>
-                </div>
-                <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
-                  <%= link_to 'Partenaires', partenaires_path, class: 'rounded-lg block text-white font-[200] text-[15px]' %>
-                </div>
-                <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
-                  <%= link_to 'Projets', projets_path, class: 'rounded-lg block text-white text-[15px] font-[200]' %>
-                </div>
-                <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
-                  <%= link_to 'Membres conseil', membre_conseils_path, class: 'block rounded-lg text-white text-[15px] font-[200]' %>
-                </div>
-                <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
-                  <%= link_to 'Salaires', salaires_path, class: 'rounded-lg block text-white text-[15px] font-[200]' %>
-                </div>
-                <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
-                  <%= link_to 'Depenses', autres_depenses_path, class: 'rounded-lg block text-white text-[15px] font-[200]' %>
-                </div>
-                <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
-                  <%= link_to 'Apports', historique_apports_path, class: 'rounded-lg block text-white text-[15px] font-[200]' %>
-                </div>
-
-                <div class="border-b-[1px] border-gray-500 my-10"></div>
-                <div>
-                  <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
-                    <%= link_to 'Parametres', autres_depenses_path, class: 'rounded-lg block text-white text-[15px] font-[200]' %>
-                  </div>
-                  <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
-                    <%= link_to 'Deconnexion', historique_apports_path, class: 'rounded-lg block text-white text-[15px] font-[200]' %>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
-        
-        <div class="w-[80%] ml-[20%]">
-          <main>
-            <div class="flex justify-end px-4 h-[50px] bg-white w-full items-center">
-              
+    
+    <% if user_signed_in? %>
+      <div class="flex">
+            <div class="w-[20%] fixed top-0 left-0 h-screen bg-gray-900">
+              <%= link_to 'Nom Ese', root_path, class: 'flex items-center px-4 h-[50px] text-xl text-center text-blue-400 font-[500]' %>
               <div>
-                
-                <% if !user_signed_in? %>
-                  <%= link_to 'connexion', new_user_session_path, class: 'px-[10px] py-[3px] rounded-lg bg-blue-600 text-white' %>
-                <% else %>
-                  <span class="text-gray-400 text-[12px] px-[10px] py-[3px] border-[1px] border-gray-400 rounded-lg"><%= current_user.username %></span>
-                <% end %>
-                
+                <div class="px-2 mt-6">
+                  <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
+                    <%= link_to 'Employes', employes_path, class: 'rounded-lg block text-white font-[200] text-[15px]' %>
+                  </div>
+                  <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
+                    <%= link_to 'Partenaires', partenaires_path, class: 'rounded-lg block text-white font-[200] text-[15px]' %>
+                  </div>
+                  <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
+                    <%= link_to 'Projets', projets_path, class: 'rounded-lg block text-white text-[15px] font-[200]' %>
+                  </div>
+                  <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
+                    <%= link_to 'Membres conseil', membre_conseils_path, class: 'block rounded-lg text-white text-[15px] font-[200]' %>
+                  </div>
+                  <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
+                    <%= link_to 'Salaires', salaires_path, class: 'rounded-lg block text-white text-[15px] font-[200]' %>
+                  </div>
+                  <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
+                    <%= link_to 'Depenses', autres_depenses_path, class: 'rounded-lg block text-white text-[15px] font-[200]' %>
+                  </div>
+                  <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
+                    <%= link_to 'Apports', historique_apports_path, class: 'rounded-lg block text-white text-[15px] font-[200]' %>
+                  </div>
+
+                  <div class="border-b-[1px] border-gray-500 my-10"></div>
+                  <div>
+                    <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
+                      <%= link_to 'Parametres', edit_user_registration_path, class: 'rounded-lg block text-white text-[15px] font-[200]' %>
+                    </div>
+                    <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2">
+                      <%= link_to 'Deconnexion', destroy_user_session_path, method: :delete, class: 'rounded-lg block text-white text-[15px] font-[200]' %>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="pl-4">
-              <p class="notice"><%= notice %></p>
-              <p class="alert"><%= alert %></p>
-              <%= yield %>
-            </div>
-          </main>
+          
+          <div class="w-[80%] ml-[20%]">
+            <main>
+              <div class="flex justify-between px-4 h-[50px] bg-white w-full items-center">
+                <div class="font-[500] text-2xl text-black"><%= yield(:sub_title) != "" ? yield(:sub_title) : "Tableau de bord" %></div>
+                <div>
+                  <span class="text-gray-400 text-[12px] px-[10px] py-[3px] border-[1px] border-gray-400 rounded-lg">
+                    <%= current_user.username %>
+                  </span>
+                </div>
+              </div>
+              <div class="pl-4 pt-2">
+                <p class="notice bg-green-400 text-green-800 rounded-lg text-center"><%= notice %></p>
+                <p class="alert bg-red-400 text-red-800 text-center rounded-lg"><%= alert %></p>
+                <%= yield %>
+              </div>
+            </main>
+          </div>
+      </div>
+    <% else %>
+      <div class="w-full h-screen">
+        <div class="flex justify-between px-6 h-[80px] items-center mb-2">
+          <div class="text-3xl font-[500] text-[#1877F2]">BEST</div>
+          <div>
+            <%= link_to 'connexion', new_user_session_path, class: 'px-[10px] py-[3px] rounded-lg bg-blue-600 text-white' %>
+          </div>
         </div>
-    </div>
+        <%= yield %>
+      </div>
+    <% end %>
+    
     
   </body>
 </html>
