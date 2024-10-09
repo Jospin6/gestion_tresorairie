@@ -1,7 +1,23 @@
-<div id="<%= dom_id employe %>">
-    <p><%= employe.nom %></p>
-    <p><%= employe.post_nom %></p>
-    <p><%= employe.contact %></p>
-    <p><%= employe.mail %></p>
-    <p><%= employe.adresses %></p>
+<div id="<%= dom_id employe %> " class="grid grid-cols-6 gap-4">
+    <div class="col-span-2 flex h-[50px] bg-white">
+        <div class="text-2xl flex items-center px-2 text-blue-400">
+            <%= fa_icon "user" %>
+        </div>
+        <div class="text-2xl flex items-center"><%= employe.nom %> <%= employe.post_nom %></div>
+    </div>
+    <div class="col-span-2 flex h-[50px] bg-white">
+        <div class="text-2xl flex items-center px-2 text-green-500">
+            <%= fa_icon "phone" %>
+        </div>
+        <div class="text-[12px] pt-2">
+            <span><%= employe.contact %></span><br>
+            <span><%= employe.mail %></span>
+        </div>
+    </div>
+    <div class="col-span-2 flex h-[50px] bg-white">
+        <div class="text-2xl flex items-center px-2 text-red-500">
+            <%= fa_icon "home" %>
+        </div>
+        <div class="flex items-center"><%= employe.adresses %></div>
+    </div>
 </div>
