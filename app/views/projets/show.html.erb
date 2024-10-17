@@ -9,7 +9,7 @@
       <div></div>
       <div class="mb-2">
         <button class="bg-blue-500 text-white rounded text-[12px] px-[10px] py-[2px]">Ajouter le budget</button>
-        <button class="bg-blue-500 text-white rounded text-[12px] px-[10px] py-[2px]">Ajouter activité</button>
+        <button class="bg-blue-500 text-white rounded text-[12px] px-[10px] py-[2px]" onclick="openPopup()">Ajouter activité</button>
         <button class="bg-blue-500 text-white rounded text-[12px] px-[10px] py-[2px]">Ajouter partenaire</button>
       </div>
     </div>
@@ -55,4 +55,25 @@
       <%= button_to "Supprimer ce projet", @projet, method: :delete, class: "mt-2 rounded-lg py-[2px] px-[10px] bg-red-700 text-[14px] text-red-300 font-medium" %>
     </div>
   </div>
+
+  <%# Activités %>
+  <div id="myPopup" class="fixed inset-0 flex items-center justify-center z-10 hidden">
+    <div class="bg-white rounded-lg shadow-lg p-6 z-50 max-w-sm w-full">
+      <span class="close cursor-pointer text-gray-500" onclick="closePopup()">&times;</span>
+      <p class="font-[500]">Ajouter un Activité</p>
+      <%= render 'activites/form', activite: @activite %>
+    </div>
+    <div class="fixed inset-0 bg-black opacity-50"></div>
+  </div>
+
+  <script>
+    function openPopup() {
+      document.getElementById("myPopup").classList.remove("hidden");
+    }
+      
+    function closePopup() {
+        document.getElementById("myPopup").classList.add("hidden");
+    }
+  </script>
+
 </div>

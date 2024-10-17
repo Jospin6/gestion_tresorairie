@@ -11,32 +11,33 @@
     </div>
   <% end %>
 
-  <div class="my-5">
+  <div class="text-[14px]">
     <%= form.label :titre %>
-    <%= form.text_field :titre, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.text_field :titre, class: "block shadow rounded-md border border-gray-400 outline-none h-[35px] mt-2 w-full" %>
   </div>
 
-  <div class="my-5">
+  <div class="grid grid-cols-6 gap-4">
+    <div class="col-span-3 text-[14px]">
+      <%= form.label :date_debut %>
+      <%= form.date_field :date_debut, class: "block shadow rounded-md border border-gray-400 outline-none h-[35px] mt-2 w-full" %>
+    </div>
+
+    <div class="col-span-3 text-[14px]">
+      <%= form.label :date_fin %>
+      <%= form.date_field :date_fin, class: "block shadow rounded-md border border-gray-400 outline-none h-[35px] mt-2 w-full" %>
+    </div>
+  </div>
+
+  <div class="text-[14px]">
     <%= form.label :description %>
-    <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.text_area :description, rows: 2, class: "block shadow rounded-md border border-gray-400 outline-none mt-2 w-full" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :date_debut %>
-    <%= form.date_field :date_debut, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :date_fin %>
-    <%= form.date_field :date_fin, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :projet_id %>
-    <%= form.text_field :projet_id, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+ 
+  <%= form.text_field :projet_id, class: "block shadow rounded-md border border-gray-400 outline-none h-[35px] mt-2 w-full hidden" %>
+ 
 
   <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.submit class: "rounded-lg py-[2px] px-[10px] bg-blue-600 text-white inline-block font-medium mt-4 cursor-pointer" %>
   </div>
 <% end %>

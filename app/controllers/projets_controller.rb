@@ -8,6 +8,8 @@ class ProjetsController < ApplicationController
 
   # GET /projets/1 or /projets/1.json
   def show
+    @projet = Projet.find(params[:id]) 
+    @activite = @projet.activites.build
   end
 
   # GET /projets/new
