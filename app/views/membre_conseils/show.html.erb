@@ -7,7 +7,16 @@
 
     <div class="grid grid-cols-6 gap-4">
       <div class="col-span-3 bg-white p-2 rounded"><%= render partial: "card", locals: { membre_conseil: @membre_conseil } %></div>
-      <div class="col-span-3 bg-white p-2 rounded"></div>
+      <div class="col-span-3 p-2 rounded">
+        <div class="col-span-2 shadow rounded bg-white p-2">
+          <p class="text-xl font-[500]"><%= @montant_apports_usd %> $ </p>
+          <p class="text-[14px]">Apport en dollars</p>
+        </div>
+        <div class="w-full mt-2 rounded shadow bg-white p-2">
+          <p class="text-xl font-[500]"><%= @montant_apports_fc %> Fc</p>
+          <p class="text-[14px]">Apport en fc</p>
+        </div>
+      </div>
     </div>
 
     <div id="Apports" class="min-w-full bg-white p-2 mt-2 rounded-lg">

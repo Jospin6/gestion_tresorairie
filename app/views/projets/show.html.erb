@@ -16,7 +16,22 @@
 
     <div class="grid grid-cols-6 gap-4">
       <div class="col-span-3 bg-white p-2 rounded"><%= render partial: "card", locals: { projet: @projet } %></div>
-      <div class="col-span-3 bg-white p-2 rounded"></div>
+      <div class="col-span-3 p-2 rounded">
+        <div class="grid grid-cols-4 gap-4">
+          <div class="col-span-2 shadow rounded bg-white p-2">
+            <p class="text-xl font-[500]"><%= @nbr_activite %> </p>
+            <p class="text-[14px]">Nombre d'activités</p>
+          </div>
+          <div class="col-span-2 shadow rounded bg-white p-2">
+            <p class="text-xl font-[500]"><%= @budget %>$</p>
+            <p class="text-[14px]">Budget</p>
+          </div>
+        </div>
+        <div class="w-full mt-2 rounded bg-white p-2">
+          <p class="text-xl font-[500]"><%= @nbr_partenaires %></p>
+          <p class="text-[14px]">Nombre de partenaires</p>
+        </div>
+      </div>
     </div>
 
     <div class="grid grid-cols-6 gap-4">

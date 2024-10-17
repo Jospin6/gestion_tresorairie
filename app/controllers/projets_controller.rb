@@ -12,6 +12,10 @@ class ProjetsController < ApplicationController
     @activite = @projet.activites.build
     @financement = @projet.financements.build
     @financements = @projet.financements.select { |financement| financement.partenaire.present? }
+
+    @nbr_activite = @projet.activites.count
+    @budget = @projet.financements.sum(:montant)
+    @nbr_partenaires =  @projet.financements.joins(:partenaire).count
   end
 
   # GET /projets/new

@@ -8,6 +8,9 @@ class MembreConseilsController < ApplicationController
 
   # GET /membre_conseils/1 or /membre_conseils/1.json
   def show
+    @membre_conseil = MembreConseil.find(params[:id])
+    @montant_apports_usd = @membre_conseil.historique_apports.where(devise: "USD").sum(:montant_recu)
+    @montant_apports_fc = @membre_conseil.historique_apports.where(devise: "FC").sum(:montant_recu)
   end
 
   # GET /membre_conseils/new

@@ -10,6 +10,10 @@ class PartenairesController < ApplicationController
   def show
     @partenaire = Partenaire.find(params[:id]) 
     @projets_finances = @partenaire.financements.joins(:projet).select('financements.montant, projets.titre, projets.description, projets.date_debut, projets.date_fin')
+  
+    @fond_investi = @partenaire.financements.sum(:montant)
+    @nbr_projets = @partenaire.financements.joins(:projet).count
+  
   end
 
   # GET /partenaires/new
