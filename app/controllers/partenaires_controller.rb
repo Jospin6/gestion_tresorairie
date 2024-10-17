@@ -8,6 +8,8 @@ class PartenairesController < ApplicationController
 
   # GET /partenaires/1 or /partenaires/1.json
   def show
+    @partenaire = Partenaire.find(params[:id]) 
+    @projets_finances = @partenaire.financements.joins(:projet).select('financements.montant, projets.titre, projets.description, projets.date_debut, projets.date_fin')
   end
 
   # GET /partenaires/new

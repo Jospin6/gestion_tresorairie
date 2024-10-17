@@ -12,17 +12,27 @@
 
     <div class="col-span-4 p-2 bg-white rounded mt-2">
         <h1 class="text-xl font-[500]">Projets financé</h1>
-        <table class="w-full text-[14px]">
+        <table class="w-full text-[14px] text-center">
           <thead>
             <tr class="border-b-[1px] border-gray-400">
               <th>Titre</th>
-              <th>Description</th>
               <th>Date debut</th>
               <th>Date fin</th>
-              <th>Montant investi</th>
+              <th>Investissement</th>
               <th>Actions</th>
             </tr>
           </thead>
+          <tbody>
+            <% @projets_finances.each do |financement| %>
+              <tr class="text-[12px] border-b-[1px] border-gray-400">
+                <td><%= financement.titre %></td>
+                <td><%= financement.date_debut %></td>
+                <td><%= financement.date_fin %></td>
+                <td><%= financement.montant %></td>
+                <td><span class="text-blue-500">Voir</span></td>
+              </tr>
+            <% end %>
+          </tbody>
         </table>
       </div>
 
