@@ -21,6 +21,14 @@
     <%= form.text_field :montant, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-[2px] mt-2 w-full" %>
   </div>
 
+  <div class="field">
+    <%= form.label :devise %><br />
+    <%= form.select :devise, options_for_select([
+      ["USD", "USD"],
+      ["FC", "FC"]
+    ]), { prompt: "Sélectionnez la devise" }, class: "w-full rounded-lg" %>
+  </div>
+
   <div class="mb-2">
     <%= form.label :date_jour %>
     <%= form.date_field :date_jour, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-[2px] mt-2 w-full" %>
