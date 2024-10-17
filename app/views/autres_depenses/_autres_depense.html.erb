@@ -1,9 +1,9 @@
 <tr id="<%= dom_id autres_depense %>" class="border-b-[1px] border-gray-400 text-center text-[14px]">
   <td><%= autres_depense.titre %></td>
-  <td><%= autres_depense.montant %></td>
+  <td><%= autres_depense.montant %> <%= autres_depense.devise %></td>
   <td><%= autres_depense.description %></td>
   <td><%= autres_depense.date_jour %></td>
   <td>
-    <%= link_to "Imprimer", autres_depense, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Imprimer", autres_depense, class: "text-blue-500" %>
   </td>
 </tr>
