@@ -65,6 +65,6 @@ class AutresDepensesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def autres_depense_params
-      params.require(:autres_depense).permit(:apport_local_id, :titre, :montant, :description, :date_jour, :devise)
+      params.require(:autres_depense).permit(:titre, :montant, :description, :date_jour, :devise)
     end
 end

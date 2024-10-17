@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_17_134350) do
+ActiveRecord::Schema[7.0].define(version: 2024_10_17_155804) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,7 +32,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_17_134350) do
   end
 
   create_table "autres_depenses", force: :cascade do |t|
-    t.bigint "apport_local_id", null: false
     t.string "titre"
     t.decimal "montant"
     t.text "description"
@@ -40,7 +39,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_17_134350) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "devise"
-    t.index ["apport_local_id"], name: "index_autres_depenses_on_apport_local_id"
   end
 
   create_table "employe_activites", force: :cascade do |t|
@@ -144,7 +142,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_17_134350) do
   end
 
   add_foreign_key "activites", "projets"
-  add_foreign_key "autres_depenses", "apport_locals"
   add_foreign_key "employe_activites", "activites"
   add_foreign_key "employe_activites", "employes"
   add_foreign_key "financements", "partenaires"
