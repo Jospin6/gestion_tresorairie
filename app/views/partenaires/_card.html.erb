@@ -1,0 +1,30 @@
+<div id="<%= dom_id partenaire %>" class="text-[14px]">
+  <p class="">
+    <strong class="block font-medium mb-1">Nom:</strong>
+    <%= partenaire.nom %>
+  </p>
+
+  <p class="">
+    <strong class="block font-medium mb-1">Type:</strong>
+    <%= partenaire.type_partenaire %>
+  </p>
+
+  <p class="">
+    <strong class="block font-medium mb-1">Contact:</strong>
+    <%= partenaire.contact %>
+  </p>
+
+  <p class="">
+    <strong class="block font-medium mb-1">Mail:</strong>
+    <%= partenaire.mail %>
+  </p>
+  <p class="">
+    <strong class="block font-medium mb-1">Adresses:</strong>
+    <%= partenaire.adresse %>
+  </p>
+
+  <p>
+    <%= link_to "Editer le partenaire", edit_partenaire_path(partenaire), class: "text-blue-500" %>
+  </p>
+
+</div>

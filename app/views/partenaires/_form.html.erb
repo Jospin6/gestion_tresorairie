@@ -28,8 +28,11 @@
     </div>
 
     <div class="col-span-6">
-      <%= form.label :type_partenaire %>
-      <%= form.text_field :type_partenaire, class: "block h-[35px] shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+      <%= form.label :type_partenaire, style: "display: block" %>
+      <%= form.select :type_partenaire, options_for_select([
+        ["Entreprise", "entreprise"],
+        ["Particulier", "particulier"]
+      ]), { include_blank: true }, class: "block h-[35px] shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
     </div>
 
     <div class="col-span-6">
