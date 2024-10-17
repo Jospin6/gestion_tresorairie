@@ -1,6 +1,13 @@
 <div id="<%= dom_id projet %>" class="text-[14px]">
   <p class="">
-    <strong class="block font-medium mb-1">Titre:</strong>
+    <div class="flex justify-between">
+      <strong class="block font-medium mb-1">Titre:</strong> 
+      <% if projet.statut == "non financé" %>
+        <span class="text-red-500"><%= projet.statut %></span>
+      <% else %>
+        <span class="text-green-500"><%= projet.statut %></span>
+      <% end %>
+    </div>
     <%= projet.titre %>
   </p>
 

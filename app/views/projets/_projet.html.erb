@@ -1,8 +1,14 @@
 <tr id="<%= dom_id projet %>" class="border-b-[1px] border-gray-400 text-center text-[14px]">
   <td class="px-2"><%= projet.titre %></td>
-  <td class="px-2"><%= projet.description %></td>
   <td class="px-2"><%= projet.date_debut %></td>
   <td class="px-2"><%= projet.date_fin %></td>
+  <td class="px-2">
+    <% if projet.statut == "non financé" %>
+      <span class="text-red-500"><%= projet.statut %></span>
+    <% else %>
+      <span class="text-green-500"><%= projet.statut %></span>
+    <% end %>
+  </td>
   <td class="px-2">
     <%= link_to "Voir", projet, class: "text-blue-500" %>
   </td>
