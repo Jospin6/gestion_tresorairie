@@ -2,58 +2,71 @@
     
     <% if user_signed_in? %>
         <div class="grid grid-cols-6 gap-4">
-            <div class="col-span-2 rounded-lg h-[80px] bg-white mt-2 flex">
+            <div class="col-span-2 shadow rounded-lg h-[80px] bg-white mt-2 flex">
                 <div class="text-3xl flex items-center px-4 text-green-500">
                     <%= fa_icon "tasks" %>
                 </div>
                 <div class="text-[12px] pt-2 flex items-center">
                     <div>
-                        <span class="text-xl font-bold">234</span><br>
-                        <span>Projets en cours</span>
+                        <span class="text-xl font-bold"> <%= @projets_finances %> </span><br>
+                        <span>Projets financés</span>
                     </div>
                 </div>
             </div>
-            <div class="col-span-2 rounded-lg h-[80px] bg-white mt-2 flex">
+            <div class="col-span-2 shadow rounded-lg h-[80px] bg-white mt-2 flex">
                 <div class="text-3xl flex items-center px-4 text-red-500">
                     <%= fa_icon "tasks" %>
                 </div>
                 <div class="text-[12px] pt-2 flex items-center">
                     <div>
-                        <span class="text-xl font-bold">234</span><br>
-                        <span>Projets</span>
+                        <span class="text-xl font-bold"><%= @projets_non_finances %></span><br>
+                        <span>Projets non financés</span>
                     </div>
                 </div>
             </div>
-            <div class="col-span-2 rounded-lg h-[80px] bg-white mt-2 flex">
+            <div class="col-span-2 shadow rounded-lg h-[80px] bg-white mt-2 flex">
                 <div class="text-3xl flex items-center px-4 text-blue-500">
                     <%= fa_icon "user-plus" %>
                 </div>
                 <div class="text-[12px] pt-2 flex items-center">
                     <div>
-                        <span class="text-xl font-bold">234</span><br>
+                        <span class="text-xl font-bold"><%= @partenaires %></span><br>
                         <span>Partenairs</span>
                     </div>
                 </div>
             </div>
-            <div class="col-span-2 rounded-lg h-[80px] bg-white mt-2 flex">
+        </div>
+        <div class="grid grid-cols-8 gap-4 mt-2">
+            <div class="col-span-2 shadow rounded-lg h-[80px] bg-white mt-2 flex">
                 <div class="text-3xl flex items-center px-4 text-blue-500">
-                    <%= fa_icon "users" %>
+                    <%= fa_icon "money" %>
                 </div>
                 <div class="text-[12px] pt-2 flex items-center">
                     <div>
-                        <span class="text-xl font-bold">234</span><br>
-                        <span>Employés</span>
+                        <span class="text-xl font-bold"><%= @montant_apport_usd %></span><br>
+                        <span>Caisse en dollars</span>
                     </div>
                 </div>
             </div>
-            <div class="col-span-2 rounded-lg h-[80px] bg-white mt-2 flex">
+            <div class="col-span-2 shadow rounded-lg h-[80px] bg-white mt-2 flex">
                 <div class="text-3xl flex items-center px-4 text-green-500">
                     <%= fa_icon "money" %>
                 </div>
                 <div class="text-[12px] pt-2 flex items-center">
                     <div>
-                        <span class="text-xl font-bold">234$</span><br>
-                        <span>Montant Apports</span>
+                        <span class="text-xl font-bold"> <%= @montant_apport_fc %> </span><br>
+                        <span>Caisse fc</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-2 shadow rounded-lg h-[80px] bg-white mt-2 flex">
+                <div class="text-3xl flex items-center px-4 text-red-500">
+                    <%= fa_icon "credit-card" %>
+                </div>
+                <div class="text-[12px] pt-2 flex items-center">
+                    <div>
+                        <span class="text-xl font-bold"> <%= @depenses_usd %> </span><br>
+                        <span>Depenses dollars</span>
                     </div>
                 </div>
             </div>
@@ -63,8 +76,8 @@
                 </div>
                 <div class="text-[12px] pt-2 flex items-center">
                     <div>
-                        <span class="text-xl font-bold">234$</span><br>
-                        <span>Depenses</span>
+                        <span class="text-xl font-bold"> <%= @depenses_fc %> </span><br>
+                        <span>Depenses fc</span>
                     </div>
                 </div>
             </div>
@@ -73,7 +86,7 @@
             <div class="col-span-3 rounded-lg h-[200px] bg-white mt-2">
                 <div class="p-2 flex justify-between h-[50px] items-center">
                     <span class="text-xl font-[500]">Projets</span>
-                    <span class="text-blue-500 text-[12px]">Créer un projet</span>
+                    <%= link_to "Créer un projet", new_projet_path, class: "text-blue-500 text-[12px]" %>
                 </div>
                 <div class="p-2">
                     <table class="w-full text-center">
@@ -86,24 +99,24 @@
                             </tr>
                         </thead>
                         <tbody class="text-[12px]">
-                            <tr class="border-b-[1px] border-gray-400">
-                                <td>Lorem ipsum dolor sit</td>
-                                <td>12/04/2024 - 28/06/2024</td>
-                                <td class="text-green-500">terminé</td>
-                                <td><span class="text-blue-500">voir</span></td>
-                            </tr>
-                            <tr class="border-b-[1px] border-gray-400">
-                                <td>Lorem ipsum dolor sit</td>
-                                <td>12/04/2024 - 28/06/2024</td>
-                                <td class="text-red-500">en cours</td>
-                                <td><span class="text-blue-500">voir</span></td>
-                            </tr>
-                            <tr class="border-b-[1px] border-gray-400">
-                                <td>Lorem ipsum dolor sit</td>
-                                <td>12/04/2024 - 28/06/2024</td>
-                                <td class="text-green-500">Terminé</td>
-                                <td><span class="text-blue-500">voir</span></td>
-                            </tr>
+                            
+                            <% @projets.each do |projet| %>
+                               <tr class="border-b-[1px] border-gray-400">
+                                    <td> <%= projet.titre %> </td>
+                                    <td><%= projet.date_debut %> - <%= projet.date_fin %></td>
+                                    <td class="text-green-500">
+                                        <% if projet.statut == "non financé" %>
+                                            <span class="text-red-500"><%= projet.statut %></span>
+                                        <% else %>
+                                            <span class="text-green-500"><%= projet.statut %></span>
+                                        <% end %>
+                                    </td>
+                                    <td>
+                                        <%= link_to "Voir", projet, class: "text-blue-500" %>
+                                    </td>
+                                </tr> 
+                            <% end %>
+        
                         </tbody>
                     </table>
                 </div>
@@ -111,7 +124,7 @@
             <div class="col-span-3 rounded-lg h-[200px] bg-white mt-2">
                 <div class="p-2 flex justify-between h-[50px] items-center">
                     <span class="text-xl font-[500]">Depenses</span>
-                    <span class="text-blue-500 text-[12px]">Ajouter un dépense</span>
+                    <%= link_to "Ajouter un dépense", new_autres_depense_path, class: "text-blue-500 text-[12px]" %>
                 </div>
                 <div class="p-2">
                     <table class="w-full text-center">
@@ -123,21 +136,15 @@
                             </tr>
                         </thead>
                         <tbody class="text-[12px]">
-                            <tr class="border-b-[1px] border-gray-400">
-                                <td>Lorem ipsum dolor sit</td>
-                                <td>12/04/2024 </td>
-                                <td><span class="text-blue-500">voir</span></td>
-                            </tr>
-                            <tr class="border-b-[1px] border-gray-400">
-                                <td>Lorem ipsum dolor sit</td>
-                                <td>12/04/2024</td>
-                                <td><span class="text-blue-500">voir</span></td>
-                            </tr>
-                            <tr class="border-b-[1px] border-gray-400">
-                                <td>Lorem ipsum dolor sit</td>
-                                <td>12/04/2024</td>
-                                <td><span class="text-blue-500">voir</span></td>
-                            </tr>
+                            
+                            <% @depenses.each do |depense| %>
+                                <tr class="border-b-[1px] border-gray-400">
+                                    <td><%= depense.titre %></td>
+                                    <td><%= depense.date_jour %> </td>
+                                    <td><span class="text-blue-500">Imprimer</span></td>
+                                </tr>
+                            <% end %>
+                            
                         </tbody>
                     </table>
                 </div>
