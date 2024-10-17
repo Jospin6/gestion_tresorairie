@@ -8,8 +8,10 @@ class ProjetsController < ApplicationController
 
   # GET /projets/1 or /projets/1.json
   def show
-    @projet = Projet.find(params[:id]) 
+    @projet = Projet.includes(financements: :partenaire).find(params[:id]) 
     @activite = @projet.activites.build
+    @financement = @projet.financements.build
+    @financements = @projet.financements.select { |financement| financement.partenaire.present? }
   end
 
   # GET /projets/new

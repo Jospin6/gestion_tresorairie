@@ -10,7 +10,7 @@
       <div class="mb-2">
         <button class="bg-blue-500 text-white rounded text-[12px] px-[10px] py-[2px]">Ajouter le budget</button>
         <button class="bg-blue-500 text-white rounded text-[12px] px-[10px] py-[2px]" onclick="openPopup()">Ajouter activité</button>
-        <button class="bg-blue-500 text-white rounded text-[12px] px-[10px] py-[2px]">Ajouter partenaire</button>
+        <button class="bg-blue-500 text-white rounded text-[12px] px-[10px] py-[2px]" onclick="openPopupFinance()">Ajouter une financement</button>
       </div>
     </div>
 
@@ -22,22 +22,31 @@
     <div class="grid grid-cols-6 gap-4">
       <div class="col-span-4 p-2 bg-white rounded mt-2">
         <h1 class="text-xl font-[500]">Activités</h1>
-        <table class="w-full text-[14px]">
+        <table class="w-full text-[14px] text-center">
           <thead>
             <tr class="border-b-[1px] border-gray-400">
               <th>Titre</th>
               <th>Description</th>
               <th>Date debut</th>
               <th>Date fin</th>
-              <th>Actions</th>
             </tr>
           </thead>
+          <tbody>
+            <% @projet.activites.each do |activite| %>
+              <tr class="border-b-[1px] border-gray-400">
+                <td><%= activite.titre %></td>
+                <td><%= activite.description %></td>
+                <td><%= activite.date_debut %></td>
+                <td><%= activite.date_fin %></td>
+              </tr>
+            <% end %>
+          </tbody>
         </table>
       </div>
 
       <div class="col-span-2 p-2 bg-white rounded mt-2">
         <h1 class="text-xl font-[500]">Partenaires</h1>
-        <table class="w-full text-[14px]">
+        <table class="w-full text-[14px] text-center">
           <thead>
             <tr class="border-b-[1px] border-gray-400">
               <th>ID</th>
@@ -45,6 +54,19 @@
               <th>Actions</th>
             </tr>
           </thead>
+          <tbody>
+            <% @financements.each do |financement| %>
+              <tr class="border-b-[1px] border-gray-400">
+                <td>
+                  <%= financement.partenaire.id %>
+                </td>
+                <td>
+                  <%= financement.partenaire.nom %>
+                </td>
+                <td><span class="text-blue-500">voir</span></td>
+              </tr>
+            <% end %>
+          </tbody>
         </table>
       </div>
     </div>
@@ -66,6 +88,16 @@
     <div class="fixed inset-0 bg-black opacity-50"></div>
   </div>
 
+  <%# Financement %>
+  <div id="myPopupFinance" class="fixed inset-0 flex items-center justify-center z-10 hidden">
+    <div class="bg-white rounded-lg shadow-lg p-6 z-50 max-w-sm w-full">
+      <span class="close cursor-pointer text-gray-500" onclick="closePopupFinance()">&times;</span>
+      <p class="font-[500]">Ajouter une financement</p>
+      <%= render 'financements/form', financement: @financement %>
+    </div>
+    <div class="fixed inset-0 bg-black opacity-50"></div>
+  </div>
+
   <script>
     function openPopup() {
       document.getElementById("myPopup").classList.remove("hidden");
@@ -73,6 +105,14 @@
       
     function closePopup() {
         document.getElementById("myPopup").classList.add("hidden");
+    }
+
+    function openPopupFinance() {
+      document.getElementById("myPopupFinance").classList.remove("hidden");
+    }
+      
+    function closePopupFinance() {
+        document.getElementById("myPopupFinance").classList.add("hidden");
     }
   </script>
 

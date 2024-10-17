@@ -10,33 +10,36 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="my-5">
-    <%= form.label :partenaire_id %>
-    <%= form.text_field :partenaire_id, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+  
+  <div class="">
+    <%= form.label :partenaire_id, style: "display: block" %>
+    <%= form.select :partenaire_id, 
+    Partenaire.all.collect { |partenaire| [partenaire.nom, partenaire.id] }, 
+    { prompt: "Sélectionnez le partenaire" }, 
+    { class: "w-full rounded-md h-[35px] shadow" } %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :projet_id %>
-    <%= form.text_field :projet_id, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+  <%= form.text_field :projet_id, class: "block hidden shadow rounded-md border border-gray-400 outline-none h-[35px] mt-2 w-full" %>
 
-  <div class="my-5">
+
+  <div class="">
     <%= form.label :montant %>
-    <%= form.text_field :montant, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.text_field :montant, class: "block shadow rounded-md border border-gray-400 outline-none h-[35px] mt-2 w-full" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :num_bordereau %>
-    <%= form.text_field :num_bordereau, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+  <div class="grid grid-cols-6 gap-4">
+    <div class="col-span-3">
+      <%= form.label :num_bordereau %>
+      <%= form.text_field :num_bordereau, class: "block shadow rounded-md border border-gray-400 outline-none h-[35px] mt-2 w-full" %>
+    </div>
 
-  <div class="my-5">
-    <%= form.label :banque %>
-    <%= form.text_field :banque, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    <div class="col-span-3">
+      <%= form.label :banque %>
+      <%= form.text_field :banque, class: "block shadow rounded-md border border-gray-400 outline-none h-[35px] mt-2 w-full" %>
+    </div>
   </div>
 
   <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.submit class: "rounded-lg py-[2px] px-[10px] text-[14px] mt-4 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>
