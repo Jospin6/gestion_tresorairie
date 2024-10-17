@@ -65,6 +65,6 @@ class HistoriqueApportsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def historique_apport_params
-      params.require(:historique_apport).permit(:montant_recu, :membre_conseil_id, :date_jour)
+      params.require(:historique_apport).permit(:montant_recu, :membre_conseil_id, :date_jour, :devise)
     end
 end

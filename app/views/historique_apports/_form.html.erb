@@ -12,14 +12,25 @@
   <% end %>
 
   <div class="my-2">
-    <%= form.label :membre_conseil_id %>
-    <%= form.text_field :membre_conseil_id, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-[2px] mt-2 w-full" %>
+    <%= form.label :membre_conseil_id, style: "display: block" %>
+    <%= form.select :membre_conseil_id, 
+    MembreConseil.all.collect { |membre| [membre.nom, membre.id] }, 
+    { prompt: "Sélectionnez le membre" }, 
+    { class: "w-full rounded-md h-[35px] shadow" } %>
   </div>
 
   <div class="my-2">
     <%= form.label :montant_recu %>
     <%= form.text_field :montant_recu, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-[2px] mt-2 w-full" %>
   </div>
+
+  <div class="field">
+      <%= form.label :devise %><br />
+      <%= form.select :devise, options_for_select([
+        ["USD", "USD"],
+        ["FC", "FC"]
+      ]), { prompt: "Sélectionnez la devise" }, class: "w-full rounded-lg" %>
+    </div>
 
   <div class="my-2">
     <%= form.label :date_jour %>

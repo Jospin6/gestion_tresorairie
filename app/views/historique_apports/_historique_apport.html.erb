@@ -1,8 +1,8 @@
 <tr id="<%= dom_id historique_apport %>" class="border-b-[1px] border-gray-400 text-center text-[14px]">
-  <td><%= historique_apport.membre_conseil_id %></td>
-  <td><%= historique_apport.montant_recu %></td>
+  <td><%= historique_apport.membre_conseil.nom %></td>
+  <td><%= historique_apport.montant_recu %> <%= historique_apport.devise %></td>
   <td><%= historique_apport.date_jour %></td>
   <td>
-    <%= link_to "Imprimer", historique_apport, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Imprimer", historique_apport, class: "text-blue-500" %>
   </td>
 </tr>
