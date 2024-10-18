@@ -17,6 +17,7 @@ class ProjetsController < ApplicationController
     @nbr_activite = @projet.activites.count
     @budget = @projet.financements.sum(:montant)
     @nbr_partenaires =  @projet.financements.joins(:partenaire).count
+    @images = @projet.images
   end
 
   # GET /projets/new

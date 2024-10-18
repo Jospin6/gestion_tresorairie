@@ -58,10 +58,10 @@
                 <div>
                   <span class="text-gray-400 text-[12px] px-[10px] py-[3px] border-[1px] border-gray-400 rounded-lg">
                     
-                    <% if !current_user.photo != nil %>
-                      <%= current_user.username %>
-                    <% else %>
+                    <% if current_user.photo.present? %>
                       <%= image_tag current_user.photo.url, alt: 'image', class: "h-[40px] w-[40px] rounded-full" %>
+                    <% else %>
+                      <%= current_user.username %>
                     <% end %>
               
                   </span>
