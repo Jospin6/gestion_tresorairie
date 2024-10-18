@@ -9,7 +9,7 @@
       <div class="col-span-3 bg-white p-2 rounded flex">
         <div class="w-[150px] h-[800px] mr-2">
           
-          <% if @partenaire.photo.presence? %>
+          <% if @partenaire.photo != nil %>
             <%= image_tag @partenaire.photo.url, alt: 'partenaire', class: "w-[150px] h-[800px]" %>
           <% end %>
           

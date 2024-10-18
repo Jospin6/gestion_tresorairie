@@ -1,7 +1,7 @@
 <tr id="<%= dom_id partenaire %>" class="border-b-[1px] border-gray-400 text-center text-[14px]">
   <td>
     
-    <% if partenaire.photo.presence? %>
+    <% if partenaire.photo != nil %>
       <%= image_tag partenaire.photo.url, alt: 'partenaire', class: "h-[40px] w-[40px] rounded-full" %>
     <% end %>
     

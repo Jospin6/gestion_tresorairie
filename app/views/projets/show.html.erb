@@ -92,7 +92,7 @@
       <div class="text-xl font-[500]">Photos du projet</div>
       <div class="grid grid-cols-8 gap-4">
 
-        <% if @projet.images.presence? %>
+        <% if @projet.images != nil %>
           <% @projet.images.each do |image| %>
             <div class="col-span-2 mb-2">
               <%= image_tag image.image.url, alt: 'image', class:"w-[200px] h-[200px]" %>
