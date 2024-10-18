@@ -36,6 +36,11 @@
     </div>
 
     <div class="col-span-6">
+      <%= form.label :photo %>
+      <%= form.file_field :photo, class: "block h-[35px] shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+
+    <div class="col-span-6">
       <%= form.label :adresse %>
       <%= form.text_area :adresse, rows: 2, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
     </div>

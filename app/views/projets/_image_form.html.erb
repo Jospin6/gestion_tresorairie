@@ -1,0 +1,24 @@
+<%= form_with(model: image, class: "contents") do |form| %>
+  <% if image.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(image.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+      <ul>
+        <% image.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= form.text_field :projet_id, class: "block shadow rounded-md border border-gray-400 outline-none h-[35px] mt-2 w-full hidden" %>
+
+    <div class="mt-2">
+      <%= form.label :image %>
+      <%= form.file_field :image, class: "block h-[35px] shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-[3px] px-[10px] mt-2 bg-blue-600 text-white inline-block cursor-pointer" %>
+  </div>
+<% end %>

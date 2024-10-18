@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :projets
   resources :partenaires
   resources :employes
+  resources :images
   devise_for :users
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
