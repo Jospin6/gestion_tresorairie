@@ -1,4 +1,4 @@
-<div class="w-full">
+<div class="w-full overflow-x-hidden">
     
     <% if user_signed_in? %>
         <div class="grid grid-cols-6 gap-4">
@@ -151,13 +151,48 @@
             </div>
         </div>
     <% else %>
-        <div>
-            <div class="text-center text-2xl font[500]">
-                <h1>Bienvenu dans le Bureau d'Etudes Scientifiques et Techniques</h1>
-                <h1>BEST</h1>
+        <div class="relative px-4">
+        <div class="overflow-hidden">
+            <div class="flex transition-transform duration-500" id="carousel">
+                <div class="min-w-full">
+                    <%= image_tag("1.jpg", class: 'w-full h-[500px] rounded-lg') %>
+                </div>
+                <div class="min-w-full">
+                    <%= image_tag("2.jpg", class: 'w-full h-[500px] rounded-lg') %>
+                </div>
+                <div class="min-w-full">
+                    <%= image_tag("3.jpg", class: 'w-full h-[500px] rounded-lg') %>
+                </div>
+                <div class="min-w-full">
+                    <%= image_tag("4.jpg", class: 'w-full h-[500px] rounded-lg') %>
+                </div>
             </div>
         </div>
+    </div>
     <% end %>
-    
+
+    <script>
+       let currentIndex = 0;
+        const totalSlides = document.querySelectorAll('#carousel > div').length;
+
+        function showSlide(index) {
+            const slides = document.getElementById('carousel');
+            currentIndex = (index + totalSlides) % totalSlides; // Gérer le cycle
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
+        // Changer d'image toutes les 5 secondes
+        setInterval(() => {
+            nextSlide();
+        }, 10000);
+    </script>
     
 </div>
