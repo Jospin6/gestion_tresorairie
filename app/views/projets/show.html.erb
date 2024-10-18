@@ -1,7 +1,9 @@
 <div class="w-full flex">
   <div class="w-full">
     <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice">
+        <%= notice %>
+      </p>
     <% end %>
     <% content_for :sub_title, t("Projets") %>
 
@@ -86,7 +88,20 @@
       </div>
     </div>
 
-    
+    <div>
+      <div class="text-xl font-[500]">Photos du projet</div>
+      <div class="grid grid-cols-8 gap-4">
+
+        <% if @projet.images.presence? %>
+          <% @projet.images.each do |image| %>
+            <div class="col-span-2 mb-2">
+              <%= image_tag image.image.url, alt: 'image', class:"w-[200px] h-[200px]" %>
+            </div>
+          <% end %>
+        <% end %>
+        
+      </div>
+    </div>
     
     <div class="inline-block ml-2">
       <%= button_to "Supprimer ce projet", @projet, method: :delete, class: "mt-2 rounded-lg py-[2px] px-[10px] bg-red-700 text-[14px] text-red-300 font-medium" %>
