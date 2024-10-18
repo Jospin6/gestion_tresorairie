@@ -96,7 +96,7 @@
           <% @images.each do |image| %>
             <div class="col-span-2 mb-2">
               <% if image.image.present? %>
-                <%= image_tag image.image.url, alt: 'image', class: "w-[200px] h-[200px]" %>
+                <%= image_tag image.image.large.url, alt: 'image', class: "w-[200px] h-[200px]" %>
               <% end %>
             </div>
           <% end %>

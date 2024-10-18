@@ -10,7 +10,7 @@
         <div class="w-[150px] h-[800px] mr-2">
           
           <% if @partenaire.photo.present? %>
-            <%= image_tag @partenaire.photo.url, alt: 'partenaire', class: "w-[150px] h-[800px]" %>
+            <%= image_tag @partenaire.photo.middle.url, alt: 'partenaire', class: "w-[150px] h-[800px]" %>
           <% end %>
           
         </div>
