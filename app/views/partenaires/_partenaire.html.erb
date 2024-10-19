@@ -2,7 +2,7 @@
   <td>
     
     <% if partenaire.photo.present? %>
-      <%= image_tag partenaire.photo.thumb.url, alt: 'partenaire', class: "rounded-full" %>
+      <%= image_tag(partenaire.photo.url, class: 'w-[40px] h-[40px]') %>
     <% end %>
     
   </td>

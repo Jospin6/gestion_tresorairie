@@ -15,8 +15,12 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  
+  get 'documents/rapport_mc', to: 'documents#rapport_mc', as: 'document_rapport_m'
+  get 'documents/apport', to: 'documents#apport', as: 'document_apport'
+  get 'documents/rapport_prtnr', to: 'documents#rapport_prtnr', as: 'document_rapport_p'
+  get 'documents/recu_prtnr', to: 'documents#recu_prtnr', as: 'document_recu_p'
+  get 'documents/projet', to: 'documents#projet', as: 'document_projet'
 
-  # Defines the root path route ("/")
   root "home#index"
 end

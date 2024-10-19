@@ -7,10 +7,10 @@
 
     <div class="grid grid-cols-6 gap-4">
       <div class="col-span-3 bg-white p-2 rounded flex">
-        <div class="w-[150px] h-[800px] mr-2">
+        <div class="w-[150px] h-[80px] mr-2">
           
           <% if @partenaire.photo.present? %>
-            <%= image_tag @partenaire.photo.middle.url, alt: 'partenaire', class: "w-[150px] h-[800px]" %>
+            <%= image_tag(@partenaire.photo.url, class: 'w-[150px] h-[80px]') %>
           <% end %>
           
         </div>
