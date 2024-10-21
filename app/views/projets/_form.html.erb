@@ -31,7 +31,15 @@
       <%= form.label :description %>
       <%= form.text_area :description, rows: 2, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
     </div>
+    <div class="col-span-6">
+      <%= form.label :statut %><br />
+      <%= form.select :statut, options_for_select([
+        ["Non financé", "non financé"],
+        ["Financé", "financé"],
+      ]), { include_blank: true }, class: "w-full rounded-lg" %>
+    </div>
   </div>
+
 
   <div class="inline">
     <%= form.submit class: "rounded-lg py-[3px] px-[10px] mt-2 bg-blue-600 text-white inline-block cursor-pointer" %>

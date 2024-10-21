@@ -2,7 +2,7 @@
   <td><%= historique_apport.membre_conseil.nom %></td>
   <td><%= historique_apport.montant_recu %> <%= historique_apport.devise %></td>
   <td><%= historique_apport.date_jour %></td>
-  <td>
-    <%= link_to "Imprimer", historique_apport, class: "text-blue-500" %>
+  <td class="text-blue-500">
+    <%= fa_icon "print" %>
   </td>
 </tr>

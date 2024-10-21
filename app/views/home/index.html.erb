@@ -43,7 +43,7 @@
                 </div>
                 <div class="text-[12px] pt-2 flex items-center">
                     <div>
-                        <span class="text-xl font-bold"><%= @montant_apport_usd %></span><br>
+                        <span class="text-xl font-bold"><%= @montant_apport_usd - @depenses_usd %></span><br>
                         <span>Caisse en dollars</span>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="text-[12px] pt-2 flex items-center">
                     <div>
-                        <span class="text-xl font-bold"> <%= @montant_apport_fc %> </span><br>
+                        <span class="text-xl font-bold"> <%= @montant_apport_fc - @depenses_fc %> </span><br>
                         <span>Caisse fc</span>
                     </div>
                 </div>
