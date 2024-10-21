@@ -3,9 +3,9 @@
     <div class="flex justify-between">
       <strong class="block font-medium mb-1">Titre:</strong> 
       <% if projet.statut == "non financé" %>
-        <span class="text-red-500"><%= projet.statut %></span>
+        <span class="text-red-500 cursor-pointer" onclick="openPopupStatut()"><%= projet.statut %></span>
       <% else %>
-        <span class="text-green-500"><%= projet.statut %></span>
+        <span class="text-green-500 cursor-pointer" onclick="openPopupStatut()"><%= projet.statut %></span>
       <% end %>
     </div>
     <%= projet.titre %>
@@ -31,3 +31,27 @@
   </p>
 
 </div>
+
+<%# Statut %>
+  <div id="myPopupStatut" class="fixed inset-0 flex items-center justify-center z-10 hidden">
+    <div class="bg-white rounded-lg shadow-lg p-6 z-50 max-w-sm w-full">
+      <span class="close cursor-pointer text-gray-500" onclick="closePopupStatut()">&times;</span>
+      <p class="font-[500]">Voulez vous changer le statut de ce projet ?</p>
+      <div class="flex justify-between px-10 pt-6">
+        <button class="py-[3px] px-[10px] bg-red-500 text-white rounded-lg">NON</button>
+        <button class="py-[3px] px-[10px] bg-blue-500 text-white rounded-lg">OUI</button>
+      </div>
+    </div>
+    <div class="fixed inset-0 bg-black opacity-50"></div>
+  </div>
+
+
+<script>
+  function openPopupStatut() {
+    document.getElementById("myPopupStatut").classList.remove("hidden");
+  }
+      
+  function closePopupStatut() {
+    document.getElementById("myPopupStatut").classList.add("hidden");
+  }
+</script>
