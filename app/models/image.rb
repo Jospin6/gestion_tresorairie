@@ -1,4 +1,4 @@
 class Image < ApplicationRecord
-  belongs_to :projet
   mount_uploader :image, ImageUploader
+  belongs_to :projet
 end

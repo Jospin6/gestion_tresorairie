@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  attr_accessor :login
   mount_uploader :photo, ImageUploader 
+  attr_accessor :login
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   validates :username, 
