@@ -13,6 +13,10 @@ class AutresDepensesController < ApplicationController
   # GET /autres_depenses/new
   def new
     @autres_depense = AutresDepense.new
+    @montant_apport_usd = HistoriqueApport.where(devise: "USD").sum(:montant_recu)
+    @montant_apport_fc = HistoriqueApport.where(devise: "FC").sum(:montant_recu)
+    @depenses_usd = AutresDepense.where(devise: "USD").sum(:montant)
+    @depenses_fc = AutresDepense.where(devise: "FC").sum(:montant)
   end
 
   # GET /autres_depenses/1/edit
@@ -22,14 +26,21 @@ class AutresDepensesController < ApplicationController
   # POST /autres_depenses or /autres_depenses.json
   def create
     @autres_depense = AutresDepense.new(autres_depense_params)
-
-    respond_to do |format|
-      if @autres_depense.save
-        format.html { redirect_to @autres_depense, notice: "Autres depense was successfully created." }
-        format.json { render :show, status: :created, location: @autres_depense }
+    @montant_apport_usd = HistoriqueApport.where(devise: "USD").sum(:montant_recu)
+    @montant_apport_fc = HistoriqueApport.where(devise: "FC").sum(:montant_recu)
+    if @autres_depense.devise == "USD"
+      if @autres_depense.montant < @montant_apport_usd 
+        @autres_depense.save
+        redirect_to @autres_depense, notice: "Autres depense was successfully created."
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @autres_depense.errors, status: :unprocessable_entity }
+        redirect_to @autres_depense, alert: "Le montant que vous voulez retirer est superieur au montant se trouvant dans le caisse dollars."
+      end
+    elsif @autres_depense.devise == "FC"
+      if @autres_depense.montant < @montant_apport_fc 
+        @autres_depense.save
+        redirect_to @autres_depense, notice: "Autres depense was successfully created."
+      else
+        redirect_to @autres_depense, alert: "Le montant que vous voulez retirer est superieur au montant se trouvant dans le caisse fc."
       end
     end
   end

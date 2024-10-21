@@ -1,3 +1,27 @@
+  <div class="flex justify-center mb-2">
+    <div class="w-[300px] mr-4 shadow rounded-lg h-[80px] bg-white mt-2 flex">
+        <div class="text-3xl flex items-center px-4 text-blue-500">
+            <%= fa_icon "money" %>
+        </div>
+        <div class="text-[12px] pt-2 flex items-center">
+            <div>
+                <span class="text-xl font-bold"><%= @montant_apport_usd - @depenses_usd %></span><br>
+                <span>Caisse en dollars</span>
+            </div>
+        </div>
+    </div>
+    <div class="w-[300px] shadow rounded-lg h-[80px] bg-white mt-2 flex">
+        <div class="text-3xl flex items-center px-4 text-green-500">
+            <%= fa_icon "money" %>
+        </div>
+        <div class="text-[12px] pt-2 flex items-center">
+            <div>
+                <span class="text-xl font-bold"> <%= @montant_apport_fc - @depenses_fc %> </span><br>
+                <span>Caisse fc</span>
+            </div>
+        </div>
+    </div>
+  </div>
 <div class="mx-auto md:w-2/3 w-full bg-white rounded-lg shadow">
   <h1 class="text-md h-[40px] flex items-center rounded-t-lg bg-blue-500 text-white px-2">
     Nouvelle depense
