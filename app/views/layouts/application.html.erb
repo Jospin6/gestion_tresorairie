@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GestionTresorairie</title>
+    <title>GestionTresorerie</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,7 +16,7 @@
     <% if user_signed_in? %>
       <div class="flex">
             <div class="w-[20%] fixed top-0 left-0 h-screen bg-gray-900">
-              <%= link_to 'BEST', root_path, class: 'flex items-center px-4 h-[50px] text-xl text-center text-blue-400 font-bold' %>
+              <%= image_tag "logo.jpg", alt: 'logo', width: "100%", height: "200" %>
               <div>
                 <div class="px-2 mt-6">
                   <div class="w-full h-[40px] flex hover:bg-gray-800 items-center rounded-lg px-2 text-white text-[15px]">
