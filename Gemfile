@@ -14,8 +14,8 @@ gem 'devise'
 gem 'cancancan', '~> 3.6', '>= 3.6.1'
 gem 'carrierwave'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
-gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
+# gem 'wicked_pdf'
+# gem 'wkhtmltopdf-binary'
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
