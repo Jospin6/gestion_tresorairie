@@ -289,7 +289,6 @@ DEPENDENCIES
   font-awesome-rails (~> 4.7, >= 4.7.0.8)
   importmap-rails
   jbuilder
-  mini_magick
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.8, >= 7.0.8.4)
