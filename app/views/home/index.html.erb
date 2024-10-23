@@ -141,7 +141,9 @@
                                 <tr class="border-b-[1px] border-gray-400">
                                     <td><%= depense.titre %></td>
                                     <td><%= depense.date_jour %> </td>
-                                    <td><span class="text-blue-500 cursor-pointer"><%= fa_icon "print" %></span></td>
+                                    <td>
+                                        <%= link_to 'print', recu_path(id: depense.id, format: :pdf), class: 'text-blue-500 cursor-pointer' %>
+                                    </td>
                                 </tr>
                             <% end %>
                             

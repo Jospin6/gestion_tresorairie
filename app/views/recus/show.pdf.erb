@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reçu <%= @recu.id %></title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reçu de Dépense</h1>
+    <p>ID: <%= @recu.id %></p>
+    <p>Montant: <%= number_to_currency(@recu.montant) %></p>
+    <p>Description: <%= @recu.description %></p>
+</body>
+</html>

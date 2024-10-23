@@ -15,13 +15,15 @@ class DocumentsController < ApplicationController
 
     def apport
 
+      @recu = AutresDepense.find(params[:id])
+
         respond_to do |format|
           format.html # page HTML pour le navigateur
           format.pdf do
-            render pdf: "apport",
-                   template: "documents/apport.html.erb",
-                   layout: 'pdf.html',
-                   disposition: 'inline'
+            render pdf: "apport_#{@recu.id}",
+              template: "documents/apport",
+              layout: 'pdf',
+              page_size: 'A4'
           end
         end
     end

@@ -22,5 +22,7 @@ Rails.application.routes.draw do
   get 'documents/recu_prtnr', to: 'documents#recu_prtnr', as: 'document_recu_p'
   get 'documents/projet', to: 'documents#projet', as: 'document_projet'
 
+  resources :recus
+
   root "home#index"
 end
