@@ -4,6 +4,7 @@
     <title>Reçu <%= @recu.id %></title>
     <meta charset="UTF-8">
     <style>
+        <%= File.read(Rails.root.join("app/assets/stylesheets/application.css")) %>
         body {
             font-family: Arial, sans-serif;
         }
@@ -13,7 +14,7 @@
     </style>
 </head>
 <body>
-    <h1>Reçu de Dépense</h1>
+    <h1 class="text-2xl font-bold">Reçu de Dépense</h1>
     <p>ID: <%= @recu.id %></p>
     <p>Montant: <%= number_to_currency(@recu.montant) %></p>
     <p>Description: <%= @recu.description %></p>
