@@ -26,10 +26,12 @@
     <%= projet.date_fin %>
   </p>
 
-  <p>
-    <%= link_to "Editer le projet", edit_projet_path(projet), class: "text-blue-500" %>
-  </p>
-
+  
+  <% if current_user.role == "trésorier" %>
+    <p>
+      <%= link_to "Editer le projet", edit_projet_path(projet), class: "text-blue-500" %>
+    </p>
+  <% end %>
 </div>
 
 

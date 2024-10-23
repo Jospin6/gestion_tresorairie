@@ -8,7 +8,7 @@
 
   <div class="flex justify-between items-center">
     <h1 class="font-[500] text-2xl"></h1>
-    <% if current_user.role != "trésorier" && "comptable" %>
+    <% if current_user.role == "trésorier" %>
       <%= link_to "Nouveau projet", new_projet_path, class: "py-3 px-5 text-blue-500 block font-medium" %>
     <% end %>
     
