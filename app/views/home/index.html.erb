@@ -86,7 +86,10 @@
             <div class="col-span-3 rounded-lg h-auto bg-white mt-2 shadow">
                 <div class="p-2 flex justify-between h-[50px] items-center">
                     <span class="text-xl font-[500]">Projets</span>
-                    <%= link_to "Créer un projet", new_projet_path, class: "text-blue-500 text-[12px]" %>
+                    <% if current_user.role != "trésorier" && "comptable" %>
+                        <%= link_to "Créer un projet", new_projet_path, class: "text-blue-500 text-[12px]" %>
+                    <% end %>
+                    
                 </div>
                 <div class="p-2">
                     <table class="w-full text-center">
@@ -124,7 +127,9 @@
             <div class="col-span-3 rounded-lg h-auto bg-white mt-2 shadow">
                 <div class="p-2 flex justify-between h-[50px] items-center">
                     <span class="text-xl font-[500]">Depenses</span>
-                    <%= link_to "Ajouter un dépense", new_autres_depense_path, class: "text-blue-500 text-[12px]" %>
+                    <% if current_user.role == "trésorier" %>
+                        <%= link_to "Ajouter un dépense", new_autres_depense_path, class: "text-blue-500 text-[12px]" %>
+                    <% end %>
                 </div>
                 <div class="p-2">
                     <table class="w-full text-center">

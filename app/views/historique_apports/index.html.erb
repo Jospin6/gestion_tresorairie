@@ -8,7 +8,10 @@
 
   <div class="flex justify-between items-center">
     <h1 class="font-[500] text-2xl"></h1>
-    <%= link_to "Nouvel apport local", new_historique_apport_path, class: "py-3 px-5 text-blue-500 block font-medium" %>
+    <% if current_user.role == "trésorier" %>
+      <%= link_to "Nouvel apport local", new_historique_apport_path, class: "py-3 px-5 text-blue-500 block font-medium" %>
+    <% end %>
+    
   </div>
 
   <div id="historique_apports" class="min-w-full bg-white p-2 rounded-lg">

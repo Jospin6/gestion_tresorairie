@@ -26,7 +26,8 @@
       <%= f.select :role, options_for_select([
         ["Trésorier", "trésorier"],
         ["Comptable", "comptable"],
-        ["Admin", "admin"]
+        ["chargé de programme", "chargé de programme"],
+        ["directeur", "directeur"]
       ]), { include_blank: true }, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-[2px] mt-2 w-full" %>
     </div>
   <% end %>
