@@ -23,8 +23,11 @@
     <%= partenaire.adresse %>
   </p>
 
-  <p>
-    <%= link_to "Editer le partenaire", edit_partenaire_path(partenaire), class: "text-blue-500" %>
-  </p>
+  
+  <% if current_user.role == "directeur" || current_user.role == "chargé de programme" %>
+    <p>
+      <%= link_to "Editer le partenaire", edit_partenaire_path(partenaire), class: "text-blue-500" %>
+    </p>
+  <% end %>
 
 </div>

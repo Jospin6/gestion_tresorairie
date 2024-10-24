@@ -54,8 +54,11 @@
         </table>
       </div>
 
-    <div class="inline-block ml-2">
-      <%= button_to "Destroy this partenaire", @partenaire, method: :delete, class: "mt-2 rounded-lg py-[2px] px-[10px] bg-red-700 text-[14px] text-red-300 font-medium" %>
-    </div>
+      
+      <% if current_user.role == "directeur" || current_user.role == "chargé de programme" %>
+        <div class="inline-block ml-2">
+          <%= button_to "Destroy this partenaire", @partenaire, method: :delete, class: "mt-2 rounded-lg py-[2px] px-[10px] bg-red-700 text-[14px] text-red-300 font-medium" %>
+        </div>
+      <% end %>
   </div>
 </div>

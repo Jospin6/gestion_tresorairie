@@ -23,9 +23,11 @@
     <strong class="block font-medium mb-1">Adresses:</strong>
     <%= membre_conseil.adresses %>
   </p>
-
-  <p>
-    <%= link_to "Editer le projet", edit_membre_conseil_path(membre_conseil), class: "text-blue-500" %>
-  </p>
+  
+  <% if current_user.role == "directeur" || current_user.role == "chargé de programme" %>
+    <p>
+      <%= link_to "Editer le projet", edit_membre_conseil_path(membre_conseil), class: "text-blue-500" %>
+    </p>    
+  <% end %>
 
 </div>
