@@ -4,6 +4,6 @@
   <td><%= autres_depense.description %></td>
   <td><%= autres_depense.date_jour %></td>
   <td>
-    <%= fa_icon "print" %>
+    <%= link_to 'print', recu_path(id: autres_depense.id, format: :pdf), class: 'text-blue-500 cursor-pointer' %>
   </td>
 </tr>

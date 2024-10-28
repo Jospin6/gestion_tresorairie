@@ -14,10 +14,9 @@
     </style>
 </head>
 <body>
-    <h1 class="text-2xl font-bold">Reçu de Dépense</h1>
+    <h1 class="text-2xl font-bold">Reçu Apport</h1>
     <p class="text-xl">N°: <%= @recu.id %>, Date <%= @recu.date_jour %></p>
-    <p class="text-xl"><%= @recu.titre %></p>
-    <p>Montant: <%= number_to_currency(@recu.montant) %></p>
-    <p>Description: <%= @recu.description %></p>
+    <p class="text-xl">Membre: <%= @recu.membre_conseil.nom %></p>
+    <p>Montant: <%= number_to_currency(@recu.montant_recu) %></p>
 </body>
 </html>

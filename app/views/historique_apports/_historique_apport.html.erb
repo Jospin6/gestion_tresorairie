@@ -3,6 +3,7 @@
   <td><%= historique_apport.montant_recu %> <%= historique_apport.devise %></td>
   <td><%= historique_apport.date_jour %></td>
   <td class="text-blue-500">
-    <%= fa_icon "print" %>
+    <%= fa_icon "" %>
+    <%= link_to 'print', apport_path(id: historique_apport.id, format: :pdf), class: 'text-blue-500 cursor-pointer' %>
   </td>
 </tr>
